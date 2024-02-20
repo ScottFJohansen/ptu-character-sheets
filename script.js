@@ -13,11 +13,11 @@ document.getElementById("add-move").addEventListener("click",  () => {
     entry.innerHTML = `<div class="move-wrapper">
         <div>
         <label for="move-name-${moveCount}">Name:</label>
-        <input type="text" id="move-name-${moveCount}" name="move-name" required>
+        <input type="text" id="move-name-${moveCount}" name="move-name" >
         </div>
         <div>
         <label for="move-frequency-${moveCount}">Frequency:</label>
-        <input type="text" id="move-frequency-${moveCount}" name="move-frequency" required>
+        <input type="text" id="move-frequency-${moveCount}" name="move-frequency" >
         </div>
         <div>
         <label for="move-type-${moveCount}">Type:</label>
@@ -45,26 +45,26 @@ document.getElementById("add-move").addEventListener("click",  () => {
     <div class="move-wrapper">
         <div>
         <label for="move-ac-${moveCount}">AC:</label>
-        <input type="text" id="move-ac-${moveCount}" name="move-ac" required>
+        <input type="text" id="move-ac-${moveCount}" name="move-ac" >
         </div>
         <div>
         <label for="move-damage-base-${moveCount}">Damage Base:</label>
-        <input type="text" id="move-damage-base-${moveCount}" name="move-damage-base" required>
+        <input type="text" id="move-damage-base-${moveCount}" name="move-damage-base" >
         </div>
         <div>
         <label for="move-range-${moveCount}">Range:</label>
-        <input type="text" id="move-range-${moveCount}" name="move-range" required>
+        <input type="text" id="move-range-${moveCount}" name="move-range" >
         </div>
     </div>
     <div class="move-wrapper">
         <div>
         <label for="move-damage-type-${moveCount}">Damage Type:</label>
-        <input type="text" id="move-damage-type-${moveCount}" name="move-damage-type" required>
+        <input type="text" id="move-damage-type-${moveCount}" name="move-damage-type" >
         </div>
     </div>
     <div class="move-wrapper">
         <label for="move-effect-${moveCount}">Effect:</label>
-        <textarea id="move-effect-${moveCount}" name="move-effect" required></textarea>
+        <textarea id="move-effect-${moveCount}" name="move-effect" ></textarea>
     </div>`;
     moveContainer.appendChild(entry);
     moveCount++;
@@ -113,7 +113,8 @@ document.getElementById("add-ability").addEventListener("click",  () => {
          var movesData = [];
          document.querySelectorAll('.move-input').forEach(function(input, index) {
          var name = document.getElementById(`move-name-${index}`).value;
-         var frequency = document.getElementById(`move-frequency-${index}`).value;
+         if (name !== ""){
+          var frequency = document.getElementById(`move-frequency-${index}`).value;
          var type = document.getElementById(`move-type-${index}`).value;
          var ac = document.getElementById(`move-ac-${index}`).value;
          var damageBase = document.getElementById(`move-damage-base-${index}`).value;
@@ -127,8 +128,11 @@ document.getElementById("add-ability").addEventListener("click",  () => {
           damageBase: damageBase,
           range: range,
           damageType: damageType,
-          effect: effect 
-         });
+          effect: effect
+        });
+        }
+          
+         
          });
 
          // For Abilities
@@ -149,7 +153,7 @@ document.getElementById("add-ability").addEventListener("click",  () => {
 
         //TODO: Convert some sections into tables to format better
         var characterSheet = `
-        <div class="character-sheet-container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+        <div class="character-sheet-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;">
   <div class="character-sheet" style="width: 800px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
     <h1>${formData.get('name')}</h1>
     <h2>${formData.get('species')} Level: ${formData.get('level')}</h2>
@@ -172,20 +176,40 @@ document.getElementById("add-ability").addEventListener("click",  () => {
     <div class="section">
       <h2>Stats</h2>
       <div class="column" style="flex: 1; padding: 0;">
-        <ul class="stats-list" style="list-style-type: none; padding: 0;">
-        <li><strong>Max HP:</strong> ${formData.get('max-hp')}</li>
-        <li><strong>Physical Evade:</strong> ${formData.get('physical-evade')}</li>
-        <li><strong>Special Evade:</strong> ${formData.get('special-evade')}</li>
-        <li><strong>Speed Evade:</strong> ${formData.get('speed-evade')}</li>
-        <li><strong>Nature:</strong> ${formData.get('nature')}</li>
-        <li><strong>Tutor Points:</strong> ${formData.get('tutor-points')}</li>
-        <li><strong>HP:</strong> ${formData.get('hp')}</li>
-        <li><strong>Attack:</strong> ${formData.get('atk')}</li>
-        <li><strong>Defense:</strong> ${formData.get('def')}</li>
-        <li><strong>Special Attack:</strong> ${formData.get('spa')}</li>
-        <li><strong>Special Defense:</strong> ${formData.get('spd')}</li>
-        <li><strong>Speed:</strong> ${formData.get('spe')}</li>
-        </ul>
+        <table style="text-align: center">
+          <tr>
+            <td><strong>HP:</td>
+            <td><strong>Atk:</strong></td>
+            <td><strong>Def:</strong></td>
+            <td><strong>SpA:</strong></td>
+            <td><strong>SpD:</strong></td>
+            <td><strong>Spe:</strong></td>
+          </tr>
+          <tr>
+            <td>${formData.get('hp')}</td>
+            <td>${formData.get('atk')}</td>
+            <td>${formData.get('def')}</td>
+            <td>${formData.get('spa')}</td>
+            <td>${formData.get('spd')}</td>
+            <td>${formData.get('spe')}</td>
+          </tr>
+          <tr>
+            <td><strong>Max HP</strong></td>
+            <td><strong>Nature</strong></td>
+            <td><strong>Phys Evade</strong></td>
+            <td><strong>Spec Evade</strong></td>
+            <td><strong>Speed Evade</strong></td>
+            <td><strong>Tutor Points</strong></td>
+          </tr>
+          <tr>
+          <td>${formData.get('max-hp')}</td>
+          <td>${formData.get('nature')}</td>
+          <td>${formData.get('physical-evade')}</td>
+          <td>${formData.get('special-evade')}</td>
+          <td>${formData.get('speed-evade')}</td>
+          <td>${formData.get('tutor-points')}</td>
+          </tr>
+        </table>
       </div>
     </div>
 
