@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Character Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Pokémon Character Form</h2>
+  <form id="pokemon-form">
+
+    <!-- General -->
+    <details>
+        <summary>General</summary>
+        <fieldset>
+            <legend>General</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="level">Level:</label>
+                <input type="number" id="level" name="level" required>
+            </div>
+            <div>
+                <label for="species">Species:</label>
+                <input type="text" id="species" name="species" required>
+            </div>
+            <div>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="loyalty">Loyalty:</label>
+                <input type="number" id="loyalty" name="loyalty" required>
+            </div>
+            <div>
+                <label for="held-item">Held Item:</label>
+                <input type="text" id="held-item" name="held-item" required>
+            </div>
+            <div>
+                <label for="type1">Type 1:</label>
+                <input type="text" id="type1" name="type1" required>
+            </div>
+            <div>
+                <label for="type2">Type 2:</label>
+                <input type="text" id="type2" name="type2">
+            </div>
+            <div>
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight" required>
+            </div>
+            <div>
+                <label for="height">Height:</label>
+                <input type="text" id="height" name="height" required>
+            </div>
+        </fieldset>
+    </details>
+
+    <!-- Stats -->
+    <details>
+        <summary>Stats</summary>
+        <fieldset>
+            <legend>Stats</legend>
+            <div>
+                <label for="max-hp">Max HP:</label>
+                <input type="number" id="max-hp" name="max-hp" required>
+            </div>
+            <div>
+                <label for="physical-evade">Physical Evade:</label>
+                <input type="number" id="physical-evade" name="physical-evade" required>
+            </div>
+            <div>
+                <label for="special-evade">Special Evade:</label>
+                <input type="number" id="special-evade" name="special-evade" required>
+            </div>
+            <div>
+                <label for="speed-evade">Speed Evade:</label>
+                <input type="number" id="speed-evade" name="speed-evade" required>
+            </div>
+            <div>
+                <label for="nature">Nature:</label>
+                <select id="nature" name="nature" required>
+                <option value="adamant">Adamant</option>
+                <option value="bold">Bold</option>
+                <!-- Add more nature options here -->
+                <!-- TODO: Add more nature options -->
+                </select>
+            </div>
+            <div>
+                <label for="tutor-points">Tutor Points:</label>
+                <input type="number" id="tutor-points" name="tutor-points" required>
+            </div>
+            <div>
+                <label for="hp">HP:</label>
+                <input type="number" id="hp" name="hp" required>
+            </div>
+            <div>
+                <label for="atk">Attack:</label>
+                <input type="number" id="atk" name="atk" required>
+            </div>
+            <div>
+                <label for="def">Defense:</label>
+                <input type="number" id="def" name="def" required>
+            </div>
+            <div>
+                <label for="spa">Special Attack:</label>
+                <input type="number" id="spa" name="spa" required>
+            </div>
+            <div>
+                <label for="spd">Special Defense:</label>
+                <input type="number" id="spd" name="spd" required>
+            </div>
+            <div>
+                <label for="spe">Speed:</label>
+                <input type="number" id="spe" name="spe" required>
+            </div>
+        </fieldset>
+    </details>
+
+    <!-- Skills -->
+    <details>
+        <summary>Skills</summary>
+        <fieldset>
+            <legend>Skills</legend>
+            <div>
+                <label for="skills[acrobatics]">Acrobatics:</label>
+                <input type="text" id="skills[acrobatics]" name="skills[acrobatics]" required>
+            </div>
+            <div>
+                <label for="skills[athletics]">Athletics:</label>
+                <input type="text" id="skills[athletics]" name="skills[athletics]" required>
+            </div>
+            <div>
+                <label for="skills[combat]">Combat:</label>
+                <input type="text" id="skills[combat]" name="skills[combat]" required>
+            </div>
+            <div>
+                <label for="skills[intimidate]">Intimidate:</label>
+                <input type="text" id="skills[intimidate]" name="skills[intimidate]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[stealth]">Stealth:</label>
+                <input type="text" id="skills[stealth]" name="skills[stealth]" required>
+            </div>
+            <div>
+                <label for="skills[survival]">Survival:</label>
+                <input type="text" id="skills[survival]" name="skills[survival]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[general-education]">General Education:</label>
+                <input type="text" id="skills[general-education]" name="skills[general-education]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[medicine-education]">Medicine Education:</label>
+                <input type="text" id="skills[medicine-education]" name="skills[medicine-education]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[occult-education]">Occult Education:</label>
+                <input type="text" id="skills[occult-education]" name="skills[occult-education]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[pokemon-education]">Pokémon Education:</label>
+                <input type="text" id="skills[pokemon-education]" name="skills[pokemon-education]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[technical-education]">Technical Education:</label>
+                <input type="text" id="skills[technical-education]" name="skills[technical-education]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[guile]">Guile:</label>
+                <input type="text" id="skills[guile]" name="skills[guile]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[perception]">Perception:</label>
+                <input type="text" id="skills[perception]" name="skills[perception]" required>
+            </div>
+            <div>
+                <label for="skills[charm]">Charm:</label>
+                <input type="text" id="skills[charm]" name="skills[charm]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[command]">Command:</label>
+                <input type="text" id="skills[command]" name="skills[command]" value="2d6">
+            </div>
+            <div>
+                <label for="skills[focus]">Focus:</label>
+                <input type="text" id="skills[focus]" name="skills[focus]" required>
+            </div>
+            <div>
+                <label for="skills[intuition]">Intuition:</label>
+                <input type="text" id="skills[intuition]" name="skills[intuition]" value="2d6">
+            </div>
+        </fieldset>
+    </details>
+
+    <!-- Movement Capabilities -->
+    <details>
+        <summary>Movement Capabilities</summary>
+        <fieldset>
+            <legend>Movement Capabilities</legend>
+            <div>
+                <label for="capabilities[overland]">Overland:</label>
+                <input type="number" id="]capabilities[overland]" name="capabilities[overland]" required>
+            </div>
+            <div>
+                <label for="capabilities[swim]">Swim:</label>
+                <input type="number" id="capabilities[swim]" name="capabilities[swim]" required>
+            </div>
+            <div>
+                <label for="capabilities[burrow]">Burrow:</label>
+                <input type="number" id="capabilities[burrow]" name="capabilities[burrow]" value=0>
+            </div>
+            <div>
+                <label for="capabilities[sky]">Sky:</label>
+                <input type="number" id="capabilities[sky]" name="capabilities[sky]" value=0>
+            </div>
+            <div>
+                <label for="capabilities[levitate]">Levitate:</label>
+                <input type="number" id="capabilities[levitate]" name="capabilities[levitate]" value=0>
+            </div>
+            <div>
+                <label for="capabilities[teleporter]">Teleporter:</label>
+                <input type="number" id="capabilities[teleporter]" name="capabilities[teleporter]" value=0>
+            </div>
+        </fieldset>
+    </details>
+
+    <!-- General Capabilities -->
+    <details>
+        <summary>General Capabilities</summary>
+        <fieldset>
+            <legend>General Capabilities</legend>
+            <div>
+                <label for="capabilities[long-jump]">Long Jump:</label>
+                <input type="number" id="capabilities[long-jump]" name="capabilities[long-jump]" required>
+            </div>
+            <div>
+                <label for="capabilities[high-jump]">High Jump:</label>
+                <input type="number" id="capabilities[high-jump]" name="capabilities[high-jump]" required>
+            </div>
+            <div>
+                <label for="capabilities[power]">Power:</label>
+                <input type="number" id="capabilities[power]" name="capabilities[power]" required>
+            </div>
+        </fieldset>
+    </details>
+
+    <!-- Extra Capabilities -->
+    <details>
+        <summary>Extra Capabilities</summary>
+        <fieldset>
+            <legend>Extra Capabilities</legend>
+            <div id="extra-capabilities-container">
+                <div id="extra-capability-0" class="extra-capability-input">
+                    <label for="extra-capability-name-0">Name:</label>
+                    <input type="text" id="extra-capability-name-0" name="extra-capability-name" required>
+                    <label for="extra-capability-description-0">Description:</label>
+                    <textarea id="extra-capability-description-0" name="extra-capability-description" required></textarea>
+                </div>
+            </div>
+            <button type="button" id="add-extra-capability">Add Extra Capability</button>
+        </fieldset>
+    </details>
+  
+  
+
+    <!-- Abilities -->
+    <details>
+        <summary>Abilities</summary>
+        <fieldset>
+            <legend>Abilities</legend>
+            <div id="abilities-container">
+                <div id="ability-0" class="ability-input">
+                <label for="ability-name-0">Ability Name:</label>
+                <input type="text" id="ability-name-0" name="ability-name" required>
+                <label for="ability-description-0">Ability Description:</label>
+                <textarea id="ability-description-0" name="ability-description" required></textarea>
+                </div>
+            </div>
+            <button type="button" id="add-ability">Add Ability</button>
+        </fieldset>
+    </details>
+  
+  
+
+    <!-- Moves -->
+    <details>
+        <summary>Moves</summary>
+        <fieldset>
+            <legend>Moves</legend>
+            <div id="moves-container">
+                <!-- Move 1 -->
+                <div id="move-0" class="move-input">
+                    <div class="move-wrapper">
+                        <div>
+                        <label for="move-name-0">Name:</label>
+                        <input type="text" id="move-name-0" name="move-name" required>
+                        </div>
+                        <div>
+                        <label for="move-frequency-0">Frequency:</label>
+                        <input type="text" id="move-frequency-0" name="move-frequency" required>
+                        </div>
+                        <div>
+                        <label for="move-type-0">Type:</label>
+                        <input type="text" id="move-type-0" name="move-type" required>
+                        </div>
+                    </div>
+                    <div class="move-wrapper">
+                        <div>
+                        <label for="move-ac-0">AC:</label>
+                        <input type="text" id="move-ac-0" name="move-ac" required>
+                        </div>
+                        <div>
+                        <label for="move-damage-base-0">Damage Base:</label>
+                        <input type="text" id="move-damage-base-0" name="move-damage-base" required>
+                        </div>
+                        <div>
+                        <label for="move-range-0">Range:</label>
+                        <input type="text" id="move-range-0" name="move-range" required>
+                        </div>
+                    </div>
+                    <div class="move-wrapper">
+                        <div>
+                        <label for="move-damage-type-0">Damage Type:</label>
+                        <input type="text" id="move-damage-type-0" name="move-damage-type" required>
+                        </div>
+                    </div>
+                    <div class="move-wrapper">
+                        <label for="move-effect-0">Effect:</label>
+                        <textarea id="move-effect-0" name="move-effect" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="add-move">Add Move</button>
+        </fieldset>
+    </details>
+  
+  
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
