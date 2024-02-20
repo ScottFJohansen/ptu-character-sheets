@@ -1,0 +1,161 @@
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  fieldset {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  legend {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: calc(100% - 160px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+.extra-capability-input label,
+.move-input label,
+.ability-input label {
+  display: block; /* Make labels display as block to force new line */
+  margin-bottom: 5px; /* Add some space between label and textarea */
+}
+
+.extra-capability-input textarea,
+.move-input textarea,
+.ability-input textarea {
+  width: calc(100% - 10px); /* Adjust width to accommodate the padding */
+  padding: 5px; /* Add padding to textarea */
+  margin-top: 5px; /* Add some space between textarea and next input */
+}
+
+.move-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.move-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.move-wrapper > div {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+  
+.move-wrapper > div:last-child {
+    margin-right: 0;
+}
+  
+.move-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.move-wrapper input[type="text"],
+.move-wrapper textarea {
+    width: calc(100% - 10px); /* Adjust for padding */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+.move-wrapper textarea {
+    height: 100px; /* Set height for textarea */
+}
+
+.character-sheet-container {
+  display: flex; justify-content: center; align-items: center; min-height: 100vh;
+}
+
+.character-sheet {
+  width: 800px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;
+}
+
+.character-sheet > h1 {
+  text-align: center;
+}
+
+.character-sheet > h2 {
+  margin-top: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.column {
+  display: flex;
+}
+
+.column ul {
+  flex: 1; padding: 0;
+}
+
+.general-list,
+.stats-list,
+.skills-list,
+.movement-capabilities-list,
+.general-capabilities-list,
+.extra-capabilities-list,
+.abilities-list,
+.moves-list {
+  list-style-type: none; padding: 0;
+}
+
+.general-list li,
+.stats-list li,
+.skills-list li,
+.movement-capabilities-list li,
+.general-capabilities-list li,
+.extra-capabilities-list li,
+.abilities-list li,
+.moves-list li {
+  margin-bottom: 10px;
+}
